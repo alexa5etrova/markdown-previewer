@@ -1,0 +1,74 @@
+.previewerWrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2%;
+    padding: 30px;
+    padding-top: 50px;
+}
+
+$primaryColor: blueviolet;
+$secondaryColor: rgb(189, 141, 235);
+
+@mixin blockArea {
+    border: 2px solid $primaryColor;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba($secondaryColor, 0.8);
+}
+.title{
+    border: 2px solid $primaryColor;
+    background-color: rgb(189, 141, 235);
+    font-size: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba($secondaryColor, 0.8);
+}
+
+.editor{
+    @include blockArea();
+
+}
+.editor textarea{
+    width: 100%;
+    height:100%;
+    resize:none;
+    border: none;
+    
+}
+    
+    
+
+
+.preview{
+    @include blockArea();
+    text-align: justify;
+    
+}
+
+//marked styles
+.preview {
+    blockquote{
+        border-left: 3px solid $primaryColor;
+        color: $primaryColor;
+        padding-left: 5px;
+        margin-left: 25px;
+    }
+    code {
+        background: rgba($secondaryColor, 0.3);
+        font-weight: bold;
+        padding: 1px 4px 2px 4px;
+        font-size: 16px;
+        
+      }
+      table {
+        border-collapse: collapse;
+      }
+    
+      td,
+      th {
+        border: 2px solid $primaryColor;
+        padding-left: 5px;
+        padding-right: 5px;
+      } 
+}
+
+
